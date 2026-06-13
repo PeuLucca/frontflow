@@ -24,11 +24,22 @@ The game must be:
 - addictive
 - replayable
 - mobile-first
+- entirely in Brazilian Portuguese (pt-BR)
 
 The game must NOT be:
 
 - a management simulator
 - a dashboard
 - score focused
+- mixed-language (no English/Portuguese mixing in the UI)
 
 Winning the season is the main goal.
+
+## Language & Platform Mandates
+
+- All player-facing text (buttons, narratives, rival dialogue, errors,
+  victory/defeat screens) must be written in pt-BR and pulled from the
+  centralized strings in `shared/i18n` - never hardcoded in components.
+- Every screen must work from 360px to 430px width with no horizontal
+  scrolling, with desktop as a secondary enhancement.
+- Code, types, file names, and internal identifiers stay in English.

@@ -1,11 +1,58 @@
-import "./App.css";
+import { useReducer } from "react";
+import {
+  createInitialGameState,
+  gameReducer,
+} from "../modules/game/game.reducer";
+import { HomeScreen } from "../modules/home/HomeScreen";
+import { IntroScreen } from "../modules/intro/IntroScreen";
+import { DraftScreen } from "../modules/draft/DraftScreen";
+import { SeasonScreen } from "../modules/season/SeasonScreen";
+import { ResultScreen } from "../modules/result/ResultScreen";
 
 function App() {
-  return (
-    <div className="app">
-      <h1>Front Row</h1>
-    </div>
-  );
+  const [state, dispatch] = useReducer(gameReducer, createInitialGameState());
+
+  switch (state.status) {
+    case "home":
+      return <HomeScreen onStart={() => dispatch({ type: "START_INTRO" })} />;
+
+    case "intro":
+      return (
+        <IntroScreen
+          state={state}
+          onContinue={() => dispatch({ type: "START_DRAFT" })}
+        />
+      );
+
+    case "draft":
+      return (
+        <DraftScreen
+          state={state}
+          onPick={(characterId) =>
+            dispatch({ type: "PICK_CHARACTER", characterId })
+          }
+        />
+      );
+
+    case "season":
+      return (
+        <SeasonScreen
+          state={state}
+          onContinue={() => dispatch({ type: "SHOW_RESULT" })}
+        />
+      );
+
+    case "result":
+      return (
+        <ResultScreen
+          state={state}
+          onRestart={() => dispatch({ type: "RESTART" })}
+        />
+      );
+
+    default:
+      return null;
+  }
 }
 
 export default App;

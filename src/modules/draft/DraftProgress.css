@@ -1,0 +1,26 @@
+.draft-progress {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.draft-progress__label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-secondary);
+  text-align: center;
+}
+
+.draft-progress__track {
+  height: 4px;
+  border-radius: var(--radius-sm);
+  background: var(--color-card);
+  overflow: hidden;
+}
+
+.draft-progress__fill {
+  height: 100%;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+}

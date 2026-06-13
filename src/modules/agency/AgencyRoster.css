@@ -1,0 +1,32 @@
+.agency-roster__title {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.agency-roster__title--primary {
+  color: var(--color-primary);
+}
+
+.agency-roster__title--rival {
+  color: var(--color-rival);
+}
+
+.agency-roster__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
+  gap: var(--space-sm);
+}
+
+.agency-roster__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  text-align: center;
+}
+
+.agency-roster__name {
+  font-size: 0.7rem;
+  color: var(--color-muted);
+  line-height: 1.2;
+}

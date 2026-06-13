@@ -1,0 +1,18 @@
+import type { Agency } from "../game/game.types";
+import { Card } from "../../shared/components/Card";
+import "./AgencyIntro.css";
+
+type AgencyIntroProps = {
+  agency: Agency;
+};
+
+export function AgencyIntro({ agency }: AgencyIntroProps) {
+  return (
+    <Card className="agency-intro">
+      <p className="agency-intro__eyebrow">Your Agency</p>
+      <h2 className="agency-intro__name">{agency.name}</h2>
+      <p className="agency-intro__tagline">{agency.tagline}</p>
+      <p className="agency-intro__description">{agency.description}</p>
+    </Card>
+  );
+}

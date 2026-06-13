@@ -1,0 +1,45 @@
+.matchup {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.matchup__side {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex: 1;
+}
+
+.matchup__side--rival {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.matchup__name {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.matchup__score {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.matchup__side--winner .matchup__score {
+  color: var(--color-primary);
+}
+
+.matchup__side--rival-winner .matchup__score {
+  color: var(--color-rival);
+}
+
+.matchup__vs {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  letter-spacing: 0.1em;
+}

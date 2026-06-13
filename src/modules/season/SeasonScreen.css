@@ -1,0 +1,17 @@
+.season {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.season__title {
+  font-size: 2rem;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.season__events {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}

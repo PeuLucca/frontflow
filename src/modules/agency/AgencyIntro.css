@@ -1,0 +1,25 @@
+.agency-intro__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.agency-intro__name {
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.agency-intro__tagline {
+  font-style: italic;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.agency-intro__description {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}

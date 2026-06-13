@@ -1,0 +1,17 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.intro__title {
+  font-size: 2rem;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+.intro__story {
+  color: var(--color-muted);
+  text-align: center;
+  line-height: 1.5;
+}

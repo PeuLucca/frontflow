@@ -37,6 +37,9 @@ Deliver a fully playable MVP.
 
 - Build succeeds
 - Full game can be completed
+- All on-screen text is in pt-BR (no English copy)
+- Screens are usable from 360px to 430px width with no horizontal
+  scrolling
 
 ## Done When
 
@@ -44,3 +47,5 @@ Deliver a fully playable MVP.
 - Rival works
 - Winner appears
 - Restart works
+- Interface is entirely in pt-BR
+- Layout works at 360px, 390px, 414px, and desktop

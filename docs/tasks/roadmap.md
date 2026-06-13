@@ -1,5 +1,14 @@
 # Roadmap
 
+## Cross-Cutting Requirements
+
+These apply to every phase below, not just a single sprint:
+
+- **pt-BR only**: all user-facing text is Brazilian Portuguese, centralized
+  in `shared/i18n`. No English/Portuguese mixing in the UI.
+- **Mobile-first**: every screen works at 360px, 390px, and 414px with no
+  horizontal scrolling; desktop is a secondary enhancement.
+
 ## Phase 1 - Foundation
 
 - Create Vite app

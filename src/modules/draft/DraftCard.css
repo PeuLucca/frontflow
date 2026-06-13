@@ -1,0 +1,19 @@
+.draft-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+}
+
+.draft-card__name {
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+.draft-card__category {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.7rem;
+  color: var(--color-secondary);
+}

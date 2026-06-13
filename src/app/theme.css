@@ -1,0 +1,61 @@
+:root {
+  --color-bg: #12070d;
+  --color-card: #1f1118;
+  --color-border: #f4d6a0;
+
+  --color-primary: #f2c46d;
+  --color-secondary: #e8a0bf;
+
+  --color-rival: #8b1e3f;
+
+  --color-text: #fff8ef;
+  --color-muted: #b9a8ad;
+
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-title: "Playfair Display", serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-title);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+}

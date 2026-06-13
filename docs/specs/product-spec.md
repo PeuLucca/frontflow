@@ -4,6 +4,28 @@
 
 Front Row is a fast fashion-agency draft game where the player builds a celebrity lineup and beats a rival agency across major fashion/media events.
 
+## Product Pillars
+
+1. **Mobile-first** - the primary experience is a smartphone browser.
+2. **Portuguese (Brazil)** - the entire interface is written in pt-BR.
+3. **Fast matches** - a full season completes in 3 minutes or less.
+4. **Strong rivalry** - Velvet House / Miranda Voss is present throughout.
+5. **Fashion fantasy** - celebrity, luxury, and editorial fantasy framing.
+6. **High replayability** - quick restarts, varied drafts and outcomes.
+
+## Platform & Language
+
+- **Platform**: mobile-first. The game must be fully playable on phone
+  screens from 360px to 430px wide, with desktop as a secondary,
+  non-blocking enhancement.
+- **Language**: Brazilian Portuguese (pt-BR) is the only supported
+  language for the MVP. Every piece of user-facing text - buttons,
+  narratives, event names, rival dialogue, tutorials, errors, and
+  victory/defeat screens - must be in pt-BR, with no mixing of English
+  and Portuguese in the interface.
+- The architecture should keep this possible to extend to other languages
+  later, but the MVP itself ships pt-BR only.
+
 ## Target User
 
 People who enjoy:
@@ -45,6 +67,8 @@ Create a complete playable season:
 - Event-by-event matchups
 - Final trophy screen
 - Restart button
+- Entire interface in pt-BR (no English copy)
+- Mobile-first layout, usable from 360px to 430px width
 
 ## Victory Condition
 
