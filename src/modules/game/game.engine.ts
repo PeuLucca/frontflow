@@ -1,5 +1,6 @@
 import type {
   Character,
+  EventNarrativeKey,
   EventOutcome,
   EventResult,
   FinalResult,
@@ -66,6 +67,7 @@ export function pickCharacter(state: GameState, characterId: string): GameState 
     const { rivalRoster, availableCharacters } = draftRivalRoster(
       remainingPool,
       playerRoster.length,
+      state.events,
     );
     const eventResults = simulateSeason(
       playerRoster,
@@ -107,13 +109,14 @@ export function restartGame(): GameState {
 function draftRivalRoster(
   pool: Character[],
   count: number,
+  events: SeasonEvent[],
 ): { rivalRoster: Character[]; availableCharacters: Character[] } {
   let availableCharacters = [...pool];
   const rivalRoster: Character[] = [];
 
   for (let i = 0; i < count; i++) {
     if (availableCharacters.length === 0) break;
-    const pick = pickRivalCharacter(availableCharacters);
+    const pick = pickRivalCharacter(availableCharacters, events);
     rivalRoster.push(pick);
     availableCharacters = availableCharacters.filter((c) => c.id !== pick.id);
   }
@@ -136,7 +139,7 @@ function simulateSeason(
       playerScore,
       rivalScore,
       winner,
-      narrative: buildEventNarrative(event, winner),
+      narrativeKey: getNarrativeKey(winner),
     };
   });
 }
@@ -170,15 +173,13 @@ function roundScore(score: number): number {
   return Math.round(score * 10) / 10;
 }
 
-function buildEventNarrative(
-  event: SeasonEvent,
-  winner: EventOutcome,
-): string {
-  if (winner === "player") {
-    return `Front Row stole the spotlight at ${event.name}.`;
+function getNarrativeKey(winner: EventOutcome): EventNarrativeKey {
+  switch (winner) {
+    case "player":
+      return "event_player_win";
+    case "rival":
+      return "event_rival_win";
+    case "draw":
+      return "event_draw";
   }
-  if (winner === "rival") {
-    return `Velvet House dominated ${event.name}.`;
-  }
-  return `${event.name} ended in a dead heat - both agencies shared the spotlight.`;
 }

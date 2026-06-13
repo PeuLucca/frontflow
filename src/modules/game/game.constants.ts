@@ -1,5 +1,6 @@
 export const TOTAL_DRAFT_ROUNDS = 11;
 export const DRAFT_OPTIONS_PER_ROUND = 3;
 export const TOP_PERFORMERS_PER_EVENT = 3;
-export const EVENT_SCORE_RANDOMNESS = 5;
+export const EVENT_SCORE_RANDOMNESS = 15;
 export const EVENT_SPECIALTY_BONUS = 10;
+export const EVENT_ATTRIBUTE_WEIGHT = 2;

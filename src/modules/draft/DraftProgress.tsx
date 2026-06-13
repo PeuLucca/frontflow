@@ -1,3 +1,4 @@
+import { strings } from "../../shared/i18n/strings";
 import "./DraftProgress.css";
 
 type DraftProgressProps = {
@@ -11,7 +12,7 @@ export function DraftProgress({ current, total }: DraftProgressProps) {
   return (
     <div className="draft-progress">
       <p className="draft-progress__label">
-        Round {current} of {total}
+        {strings.draft.progress(current, total)}
       </p>
       <div className="draft-progress__track">
         <div

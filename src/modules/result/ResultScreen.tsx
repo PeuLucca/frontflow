@@ -3,6 +3,7 @@ import { Layout } from "../../shared/components/Layout";
 import { Button } from "../../shared/components/Button";
 import { Card } from "../../shared/components/Card";
 import { AgencyRoster } from "../agency/AgencyRoster";
+import { strings } from "../../shared/i18n/strings";
 import "./ResultScreen.css";
 
 type ResultScreenProps = {
@@ -15,30 +16,30 @@ export function ResultScreen({ state, onRestart }: ResultScreenProps) {
 
   if (!finalResult) return null;
 
-  const headline =
-    finalResult.winner === "player"
-      ? `${playerAgency.name} Wins the Season`
-      : finalResult.winner === "rival"
-        ? `${rivalAgency.name} Wins the Season`
-        : "The Season Ends in a Tie";
+  const headline = strings.result.headline(
+    finalResult.winner,
+    playerAgency.name,
+    rivalAgency.name,
+  );
 
-  const subline =
-    finalResult.winner === "player"
-      ? "The cameras are on you now."
-      : finalResult.winner === "rival"
-        ? `${rivalAgency.owner} smiles. For now.`
-        : "Neither agency could claim the crown.";
+  const subline = strings.result.subline(
+    finalResult.winner,
+    rivalAgency.owner,
+  );
 
   return (
     <Layout>
       <div className="result">
         <Card highlight className="result__champion">
-          <p className="result__eyebrow">Final Result</p>
+          <p className="result__eyebrow">{strings.result.eyebrow}</p>
           <h1 className="result__headline">{headline}</h1>
           <p className="result__subline">{subline}</p>
           <p className="result__score">
-            {finalResult.playerWins} - {finalResult.rivalWins}
-            {finalResult.draws > 0 ? ` (${finalResult.draws} draws)` : ""}
+            {strings.result.score(
+              finalResult.playerWins,
+              finalResult.rivalWins,
+              finalResult.draws,
+            )}
           </p>
         </Card>
 
@@ -54,7 +55,7 @@ export function ResultScreen({ state, onRestart }: ResultScreenProps) {
         />
 
         <Button onClick={onRestart} fullWidth>
-          Play Again
+          {strings.result.restartButton}
         </Button>
       </div>
     </Layout>

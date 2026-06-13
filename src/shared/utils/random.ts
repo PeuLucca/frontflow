@@ -14,3 +14,15 @@ export function pickRandomUnique<T>(items: T[], count: number): T[] {
 export function randomInRange(min: number, max: number): number {
   return min + Math.random() * (max - min);
 }
+
+export function weightedRandomPick<T>(items: T[], weights: number[]): T {
+  const total = weights.reduce((sum, weight) => sum + weight, 0);
+  let remaining = Math.random() * total;
+
+  for (let i = 0; i < items.length; i++) {
+    remaining -= weights[i];
+    if (remaining <= 0) return items[i];
+  }
+
+  return items[items.length - 1];
+}

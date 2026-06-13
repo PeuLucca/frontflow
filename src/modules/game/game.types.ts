@@ -54,12 +54,17 @@ export type SeasonEvent = {
 
 export type EventOutcome = "player" | "rival" | "draw";
 
+export type EventNarrativeKey =
+  | "event_player_win"
+  | "event_rival_win"
+  | "event_draw";
+
 export type EventResult = {
   eventId: string;
   playerScore: number;
   rivalScore: number;
   winner: EventOutcome;
-  narrative: string;
+  narrativeKey: EventNarrativeKey;
 };
 
 export type FinalResult = {

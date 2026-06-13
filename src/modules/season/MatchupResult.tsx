@@ -1,4 +1,5 @@
 import type { EventResult } from "../game/game.types";
+import { strings } from "../../shared/i18n/strings";
 import "./MatchupResult.css";
 
 type MatchupResultProps = {
@@ -17,7 +18,7 @@ export function MatchupResult({ result, playerName, rivalName }: MatchupResultPr
         <span className="matchup__name">{playerName}</span>
         <span className="matchup__score">{result.playerScore}</span>
       </div>
-      <span className="matchup__vs">vs</span>
+      <span className="matchup__vs">{strings.season.vs}</span>
       <div
         className={`matchup__side matchup__side--rival ${rivalWins ? "matchup__side--rival-winner" : ""}`}
       >

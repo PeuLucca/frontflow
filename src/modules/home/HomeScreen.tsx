@@ -1,5 +1,6 @@
 import { Layout } from "../../shared/components/Layout";
 import { Button } from "../../shared/components/Button";
+import { strings } from "../../shared/i18n/strings";
 import "./HomeScreen.css";
 
 type HomeScreenProps = {
@@ -10,13 +11,11 @@ export function HomeScreen({ onStart }: HomeScreenProps) {
   return (
     <Layout>
       <div className="home">
-        <p className="home__eyebrow">A Fashion Agency Rivalry</p>
-        <h1 className="home__title">Front Row</h1>
-        <p className="home__subtitle">
-          Build your roster. Outshine Velvet House. Own the season.
-        </p>
+        <p className="home__eyebrow">{strings.home.eyebrow}</p>
+        <h1 className="home__title">{strings.home.title}</h1>
+        <p className="home__subtitle">{strings.home.subtitle}</p>
         <Button onClick={onStart} fullWidth>
-          Start Season
+          {strings.home.startButton}
         </Button>
       </div>
     </Layout>

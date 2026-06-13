@@ -1,5 +1,6 @@
 import type { Agency } from "../game/game.types";
 import { Card } from "../../shared/components/Card";
+import { strings } from "../../shared/i18n/strings";
 import "./RivalIntro.css";
 
 type RivalIntroProps = {
@@ -14,9 +15,9 @@ export function RivalIntro({ agency }: RivalIntroProps) {
 
   return (
     <Card className="card rival-intro">
-      <p className="rival-intro__eyebrow">Your Rival</p>
+      <p className="rival-intro__eyebrow">{strings.rivalIntro.eyebrow}</p>
       <h2 className="rival-intro__owner">{agency.owner}</h2>
-      <p className="rival-intro__role">CEO of {agency.name}</p>
+      <p className="rival-intro__role">{strings.rivalIntro.role(agency.name)}</p>
       <div className="rival-intro__traits">
         {traits.map((trait) => (
           <span key={trait} className="rival-intro__trait">

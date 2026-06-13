@@ -19,18 +19,28 @@ function getInitials(name: string): string {
     .toUpperCase();
 }
 
+function resolveImageUrl(imageUrl: string): string {
+  if (/^https?:\/\//.test(imageUrl)) return imageUrl;
+  return `${import.meta.env.BASE_URL}${imageUrl.replace(/^\/+/, "")}`;
+}
+
 export function Avatar({ imageUrl, name, size = "md" }: AvatarProps) {
+  const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
 
   return (
     <div className={`avatar avatar--${size}`}>
       {!failed ? (
-        <img
-          src={imageUrl}
-          alt={name}
-          className="avatar__image"
-          onError={() => setFailed(true)}
-        />
+        <>
+          {!loaded && <div className="avatar__loading" aria-hidden="true" />}
+          <img
+            src={resolveImageUrl(imageUrl)}
+            alt={name}
+            className={`avatar__image${loaded ? " avatar__image--loaded" : ""}`}
+            onLoad={() => setLoaded(true)}
+            onError={() => setFailed(true)}
+          />
+        </>
       ) : (
         <span className="avatar__initials">{getInitials(name)}</span>
       )}

@@ -3,6 +3,7 @@ import { Layout } from "../../shared/components/Layout";
 import { Button } from "../../shared/components/Button";
 import { AgencyIntro } from "../agency/AgencyIntro";
 import { RivalIntro } from "../rival/RivalIntro";
+import { strings } from "../../shared/i18n/strings";
 import "./IntroScreen.css";
 
 type IntroScreenProps = {
@@ -14,14 +15,14 @@ export function IntroScreen({ state, onContinue }: IntroScreenProps) {
   return (
     <Layout>
       <div className="intro">
-        <h1 className="intro__title">The Season Begins</h1>
+        <h1 className="intro__title">{strings.intro.title}</h1>
         <p className="intro__story">
-          {`${state.rivalAgency.name} has ruled the runways for a decade. ${state.playerAgency.name} is ready to change that.`}
+          {strings.intro.story(state.rivalAgency.name, state.playerAgency.name)}
         </p>
         <AgencyIntro agency={state.playerAgency} />
         <RivalIntro agency={state.rivalAgency} />
         <Button onClick={onContinue} fullWidth>
-          Begin Draft
+          {strings.intro.continueButton}
         </Button>
       </div>
     </Layout>
