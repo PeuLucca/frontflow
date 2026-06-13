@@ -74,7 +74,13 @@ export type FinalResult = {
   draws: number;
 };
 
-export type GameStatus = "home" | "intro" | "draft" | "season" | "result";
+export type GameStatus =
+  | "home"
+  | "intro"
+  | "draft"
+  | "rival_draft"
+  | "season"
+  | "result";
 
 export type GameState = {
   status: GameStatus;
@@ -98,5 +104,6 @@ export type GameAction =
   | { type: "START_INTRO" }
   | { type: "START_DRAFT" }
   | { type: "PICK_CHARACTER"; characterId: string }
+  | { type: "CONTINUE_TO_SEASON" }
   | { type: "SHOW_RESULT" }
   | { type: "RESTART" };

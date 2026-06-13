@@ -1,6 +1,7 @@
 import { Layout } from "../../shared/components/Layout";
 import { Button } from "../../shared/components/Button";
 import { strings } from "../../shared/i18n/strings";
+import logo from "../../assets/logo/logo-full.svg";
 import "./HomeScreen.css";
 
 type HomeScreenProps = {
@@ -12,7 +13,9 @@ export function HomeScreen({ onStart }: HomeScreenProps) {
     <Layout>
       <div className="home">
         <p className="home__eyebrow">{strings.home.eyebrow}</p>
-        <h1 className="home__title">{strings.home.title}</h1>
+        <h1 className="home__logo">
+          <img src={logo} alt={strings.home.title} />
+        </h1>
         <p className="home__subtitle">{strings.home.subtitle}</p>
         <Button onClick={onStart} fullWidth>
           {strings.home.startButton}

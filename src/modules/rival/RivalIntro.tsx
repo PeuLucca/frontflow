@@ -26,6 +26,9 @@ export function RivalIntro({ agency }: RivalIntroProps) {
         ))}
       </div>
       <p className="rival-intro__description">{agency.description}</p>
+      <p className="rival-intro__reputation">
+        {strings.rivalIntro.reputation(agency.owner, agency.name)}
+      </p>
     </Card>
   );
 }

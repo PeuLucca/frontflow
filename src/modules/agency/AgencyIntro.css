@@ -23,3 +23,11 @@
   font-size: 0.9rem;
   line-height: 1.5;
 }
+
+.agency-intro__debut {
+  color: var(--color-secondary);
+  font-size: 0.85rem;
+  font-style: italic;
+  line-height: 1.5;
+  margin-top: var(--space-sm);
+}

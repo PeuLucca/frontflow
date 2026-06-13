@@ -9,18 +9,25 @@ type EventCardProps = {
   result: EventResult;
   playerName: string;
   rivalName: string;
+  rivalOwner: string;
 };
 
-export function EventCard({ event, result, playerName, rivalName }: EventCardProps) {
+export function EventCard({
+  event,
+  result,
+  playerName,
+  rivalName,
+  rivalOwner,
+}: EventCardProps) {
   return (
     <Card className="event-card">
       <h3 className="event-card__name">{event.name}</h3>
       <MatchupResult result={result} playerName={playerName} rivalName={rivalName} />
       <p className="event-card__narrative">
-        {strings.season.narrative(result.narrativeKey, {
-          eventName: event.name,
+        {strings.season.narrative(result.narrativeKey, event.type, {
           playerName,
           rivalName,
+          rivalOwner,
         })}
       </p>
     </Card>

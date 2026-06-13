@@ -78,7 +78,7 @@ export function pickCharacter(state: GameState, characterId: string): GameState 
 
     return {
       ...state,
-      status: "season",
+      status: "rival_draft",
       round: state.round + 1,
       playerRoster,
       rivalRoster,
@@ -96,6 +96,10 @@ export function pickCharacter(state: GameState, characterId: string): GameState 
     availableCharacters: remainingPool,
     currentOptions: pickRandomUnique(remainingPool, DRAFT_OPTIONS_PER_ROUND),
   };
+}
+
+export function continueToSeason(state: GameState): GameState {
+  return { ...state, status: "season" };
 }
 
 export function showResult(state: GameState): GameState {

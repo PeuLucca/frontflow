@@ -29,6 +29,7 @@ export function SeasonScreen({ state, onContinue }: SeasonScreenProps) {
               result={result}
               playerName={state.playerAgency.name}
               rivalName={state.rivalAgency.name}
+              rivalOwner={state.rivalAgency.owner}
             />
           ))}
         </div>

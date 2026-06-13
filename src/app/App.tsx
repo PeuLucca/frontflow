@@ -6,6 +6,7 @@ import {
 import { HomeScreen } from "../modules/home/HomeScreen";
 import { IntroScreen } from "../modules/intro/IntroScreen";
 import { DraftScreen } from "../modules/draft/DraftScreen";
+import { RivalDraftScreen } from "../modules/rival/RivalDraftScreen";
 import { SeasonScreen } from "../modules/season/SeasonScreen";
 import { ResultScreen } from "../modules/result/ResultScreen";
 
@@ -31,6 +32,14 @@ function App() {
           onPick={(characterId) =>
             dispatch({ type: "PICK_CHARACTER", characterId })
           }
+        />
+      );
+
+    case "rival_draft":
+      return (
+        <RivalDraftScreen
+          state={state}
+          onContinue={() => dispatch({ type: "CONTINUE_TO_SEASON" })}
         />
       );
 

@@ -1,0 +1,47 @@
+.rival-draft {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.rival-draft__title {
+  font-size: 1.75rem;
+  color: var(--color-rival);
+  text-align: center;
+}
+
+.rival-draft__subtitle {
+  color: var(--color-muted);
+  text-align: center;
+}
+
+.rival-draft__picks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.rival-draft__pick {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  border-color: var(--color-rival);
+}
+
+.rival-draft__pick-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.rival-draft__pick-name {
+  font-size: 1rem;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+}
+
+.rival-draft__pick-commentary {
+  font-style: italic;
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}

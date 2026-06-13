@@ -17,3 +17,26 @@ export function pickRivalCharacter(
 
   return weightedRandomPick(available, weights);
 }
+
+const RIVAL_DRAFT_HIGHLIGHT_COUNT = 3;
+
+export type RivalDraftHighlight = {
+  character: Character;
+  variantIndex: number;
+};
+
+// The standout Velvet House picks worth calling out to the player, each
+// paired with a distinct commentary variant so the reveal feels varied.
+export function getRivalDraftHighlights(
+  rivalRoster: Character[],
+  events: SeasonEvent[],
+): RivalDraftHighlight[] {
+  const ranked = [...rivalRoster].sort(
+    (a, b) =>
+      getOverallEventScore(b, events) - getOverallEventScore(a, events),
+  );
+
+  return ranked
+    .slice(0, Math.min(RIVAL_DRAFT_HIGHLIGHT_COUNT, ranked.length))
+    .map((character, index) => ({ character, variantIndex: index }));
+}

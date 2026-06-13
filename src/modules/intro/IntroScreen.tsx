@@ -17,7 +17,11 @@ export function IntroScreen({ state, onContinue }: IntroScreenProps) {
       <div className="intro">
         <h1 className="intro__title">{strings.intro.title}</h1>
         <p className="intro__story">
-          {strings.intro.story(state.rivalAgency.name, state.playerAgency.name)}
+          {strings.intro.story(
+            state.rivalAgency.name,
+            state.rivalAgency.owner,
+            state.playerAgency.name,
+          )}
         </p>
         <AgencyIntro agency={state.playerAgency} />
         <RivalIntro agency={state.rivalAgency} />

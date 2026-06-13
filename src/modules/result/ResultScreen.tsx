@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { GameState } from "../game/game.types";
 import { Layout } from "../../shared/components/Layout";
 import { Button } from "../../shared/components/Button";
@@ -6,6 +7,8 @@ import { AgencyRoster } from "../agency/AgencyRoster";
 import { strings } from "../../shared/i18n/strings";
 import "./ResultScreen.css";
 
+const SHARE_FEEDBACK_DURATION_MS = 2000;
+
 type ResultScreenProps = {
   state: GameState;
   onRestart: () => void;
@@ -13,6 +16,7 @@ type ResultScreenProps = {
 
 export function ResultScreen({ state, onRestart }: ResultScreenProps) {
   const { finalResult, playerAgency, rivalAgency } = state;
+  const [showCopiedFeedback, setShowCopiedFeedback] = useState(false);
 
   if (!finalResult) return null;
 
@@ -27,6 +31,40 @@ export function ResultScreen({ state, onRestart }: ResultScreenProps) {
     rivalAgency.owner,
   );
 
+  const narrative = strings.result.narrative(finalResult.winner, {
+    playerName: playerAgency.name,
+    rivalName: rivalAgency.name,
+    rivalOwner: rivalAgency.owner,
+  });
+
+  const scoreText = strings.result.score(
+    finalResult.playerWins,
+    finalResult.rivalWins,
+    finalResult.draws,
+  );
+
+  const handleShare = async () => {
+    const shareText = strings.result.shareText(headline, scoreText, narrative);
+    const url = window.location.href;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: strings.result.shareTitle, text: shareText, url });
+      } catch {
+        // user cancelled the share sheet - no action needed
+      }
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(`${shareText}\n${url}`);
+      setShowCopiedFeedback(true);
+      window.setTimeout(() => setShowCopiedFeedback(false), SHARE_FEEDBACK_DURATION_MS);
+    } catch {
+      // clipboard unavailable - no fallback UI possible
+    }
+  };
+
   return (
     <Layout>
       <div className="result">
@@ -34,13 +72,8 @@ export function ResultScreen({ state, onRestart }: ResultScreenProps) {
           <p className="result__eyebrow">{strings.result.eyebrow}</p>
           <h1 className="result__headline">{headline}</h1>
           <p className="result__subline">{subline}</p>
-          <p className="result__score">
-            {strings.result.score(
-              finalResult.playerWins,
-              finalResult.rivalWins,
-              finalResult.draws,
-            )}
-          </p>
+          <p className="result__score">{scoreText}</p>
+          <p className="result__narrative">{narrative}</p>
         </Card>
 
         <AgencyRoster
@@ -53,6 +86,15 @@ export function ResultScreen({ state, onRestart }: ResultScreenProps) {
           roster={state.rivalRoster}
           accent="rival"
         />
+
+        <div className="result__share">
+          <Button onClick={handleShare} variant="secondary" fullWidth>
+            {strings.result.shareButton}
+          </Button>
+          {showCopiedFeedback && (
+            <p className="result__share-feedback">{strings.result.shareCopied}</p>
+          )}
+        </div>
 
         <Button onClick={onRestart} fullWidth>
           {strings.result.restartButton}

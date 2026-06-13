@@ -9,15 +9,22 @@
 }
 
 .home__eyebrow {
+  width: 100%;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   font-size: 0.75rem;
   color: var(--color-secondary);
 }
 
-.home__title {
-  font-size: 3.5rem;
-  color: var(--color-primary);
+.home__logo {
+  width: 100%;
+  max-width: 220px;
+}
+
+.home__logo img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .home__subtitle {

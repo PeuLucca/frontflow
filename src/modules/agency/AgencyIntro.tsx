@@ -14,6 +14,9 @@ export function AgencyIntro({ agency }: AgencyIntroProps) {
       <h2 className="agency-intro__name">{agency.name}</h2>
       <p className="agency-intro__tagline">{agency.tagline}</p>
       <p className="agency-intro__description">{agency.description}</p>
+      <p className="agency-intro__debut">
+        {strings.agencyIntro.debutLine(agency.name)}
+      </p>
     </Card>
   );
 }

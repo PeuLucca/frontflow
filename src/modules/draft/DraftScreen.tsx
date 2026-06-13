@@ -1,3 +1,4 @@
+import { useState } from "react";
 import type { GameState } from "../game/game.types";
 import { getDraftProgress } from "../game/game.selectors";
 import { Layout } from "../../shared/components/Layout";
@@ -6,6 +7,8 @@ import { DraftCard } from "./DraftCard";
 import { strings } from "../../shared/i18n/strings";
 import "./DraftScreen.css";
 
+const SELECTION_DELAY_MS = 220;
+
 type DraftScreenProps = {
   state: GameState;
   onPick: (characterId: string) => void;
@@ -13,6 +16,16 @@ type DraftScreenProps = {
 
 export function DraftScreen({ state, onPick }: DraftScreenProps) {
   const { current, total } = getDraftProgress(state);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  const handleChoose = (characterId: string) => {
+    if (selectedId) return;
+    setSelectedId(characterId);
+    window.setTimeout(() => {
+      setSelectedId(null);
+      onPick(characterId);
+    }, SELECTION_DELAY_MS);
+  };
 
   return (
     <Layout>
@@ -24,7 +37,10 @@ export function DraftScreen({ state, onPick }: DraftScreenProps) {
             <DraftCard
               key={character.id}
               character={character}
-              onChoose={() => onPick(character.id)}
+              onChoose={() => handleChoose(character.id)}
+              selected={selectedId === character.id}
+              dimmed={selectedId !== null && selectedId !== character.id}
+              disabled={selectedId !== null}
             />
           ))}
         </div>

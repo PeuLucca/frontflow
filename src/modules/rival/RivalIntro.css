@@ -40,3 +40,11 @@
   font-size: 0.9rem;
   line-height: 1.5;
 }
+
+.rival-intro__reputation {
+  font-style: italic;
+  color: var(--color-rival);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-top: var(--space-sm);
+}

@@ -1,5 +1,6 @@
 import type { GameAction, GameState } from "./game.types";
 import {
+  continueToSeason,
   createInitialState,
   pickCharacter,
   restartGame,
@@ -20,6 +21,8 @@ export function gameReducer(state: GameState, action: GameAction): GameState {
       return startDraft(state);
     case "PICK_CHARACTER":
       return pickCharacter(state, action.characterId);
+    case "CONTINUE_TO_SEASON":
+      return continueToSeason(state);
     case "SHOW_RESULT":
       return showResult(state);
     case "RESTART":
