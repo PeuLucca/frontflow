@@ -83,6 +83,10 @@ const RIVAL_PICK_COMMENTARY = [
 ];
 
 export const ptBR: Strings = {
+  header: {
+    wordmark: "Front Row",
+    tagline: "Monte · Desfile · Vença",
+  },
   home: {
     eyebrow: "Uma Rivalidade de Agências de Moda",
     title: "Front Row",
@@ -91,21 +95,22 @@ export const ptBR: Strings = {
     startButton: "Começar Temporada",
   },
   intro: {
-    title: "A Temporada Começa",
-    story: (rivalName, rivalOwner, playerName) =>
-      `${rivalName} domina as passarelas há uma década, e ${rivalOwner} trata cada temporada como propriedade sua. ${playerName} chega sem tradição, sem desculpas - e com um único objetivo: tirar o trono de quem nunca imaginou perder.`,
+    step1: "A temporada começou.",
+    step2: (rivalName) => `${rivalName} domina as passarelas há uma década.`,
+    step3: "Agora uma nova agência entrou no jogo.",
+    nextButton: "Continuar",
     continueButton: "Iniciar Draft",
   },
-  agencyIntro: {
-    eyebrow: "Sua Agência",
-    debutLine: (playerName) =>
-      `Esta é a primeira temporada da ${playerName}. Ninguém te conhece ainda - mas isso está prestes a mudar.`,
-  },
-  rivalIntro: {
-    eyebrow: "Sua Rival",
-    role: (agencyName) => `CEO da ${agencyName}`,
-    reputation: (rivalOwner, rivalName) =>
-      `${rivalOwner} não perde uma temporada há dez anos. Para a ${rivalName}, isso não é sorte - é rotina.`,
+  profiles: {
+    player: {
+      role: (agencyName) => `Direção da ${agencyName}`,
+      tagline: "A nova aposta da temporada.",
+    },
+    rival: {
+      role: (agencyName) => `CEO da ${agencyName}`,
+      tagline: "Fria, elegante e impossível de ignorar.",
+    },
+    matchupLabel: (playerOwner, rivalOwner) => `${playerOwner} x ${rivalOwner}`,
   },
   draft: {
     title: (agencyName) => `Quem se junta à ${agencyName}?`,
@@ -119,22 +124,46 @@ export const ptBR: Strings = {
       rising_star: "Promessa",
       fashion_icon: "Ícone da Moda",
     },
+    attributes: {
+      fame: "Fama",
+      elegance: "Elegância",
+      engagement: "Engajamento",
+      networking: "Contatos",
+      charisma: "Carisma",
+      trend: "Tendência",
+    },
+    strengthsLabel: "Fortes",
+    weaknessLabel: "Atenção",
+    rosterLabel: (agencyName, count, total) =>
+      `Elenco ${agencyName}: ${count}/${total}`,
   },
   rivalDraft: {
     title: "Enquanto Isso, na Velvet House...",
     subtitle: (rivalOwner) =>
-      `${rivalOwner} também fez sua escalação - e não foi gentil.`,
+      `${rivalOwner} também fechou sua escalação. E ela não foi gentil.`,
     pickCommentary: (characterName, variantIndex) =>
       RIVAL_PICK_COMMENTARY[variantIndex % RIVAL_PICK_COMMENTARY.length](
         characterName,
       ),
     continueButton: "Ver a Temporada",
+    playerRosterTitle: "Sua Escalação",
+    playerRosterSubtitle: (count) =>
+      `${count} estrelas prontas para a temporada.`,
+    rivalRosterTitle: "Escalação da Velvet House",
+    rivalRosterSubtitle: "Algumas escolhas ainda estão sob sigilo.",
+    hiddenCount: (count) => `+ ${count} nomes guardados a sete chaves`,
   },
   season: {
     title: "A Temporada",
+    progress: (current, total) => `Evento ${current} de ${total}`,
     nextEventButton: "Próximo Evento",
     finalResultButton: "Ver Resultado Final",
     vs: "x",
+    outcomeLabel: {
+      player: "Vitória",
+      rival: "Derrota",
+      draw: "Empate",
+    },
     narrative: (key, eventType, params) =>
       EVENT_NARRATIVE[eventType][key](params),
   },

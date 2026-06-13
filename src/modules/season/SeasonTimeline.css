@@ -1,0 +1,52 @@
+.season-timeline {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+}
+
+.season-timeline__item {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-card);
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.season-timeline__item--current {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: 0 0 12px rgba(242, 196, 109, 0.35);
+}
+
+.season-timeline__item--upcoming {
+  opacity: 0.45;
+}
+
+.season-timeline__item--done-player {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+.season-timeline__item--done-rival {
+  background: var(--color-rival);
+  border-color: var(--color-rival);
+  color: var(--color-text);
+}
+
+.season-timeline__item--done-draw {
+  background: var(--color-muted);
+  border-color: var(--color-muted);
+  color: var(--color-bg);
+}

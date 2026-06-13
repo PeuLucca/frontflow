@@ -4,6 +4,7 @@ import type {
   EventOutcome,
   EventType,
 } from "../../modules/game/game.types";
+import type { AttributeKey } from "../utils/attributes";
 import { ptBR } from "./pt-BR";
 
 export type NarrativeParams = {
@@ -13,6 +14,10 @@ export type NarrativeParams = {
 };
 
 export type Strings = {
+  header: {
+    wordmark: string;
+    tagline: string;
+  };
   home: {
     eyebrow: string;
     title: string;
@@ -20,36 +25,51 @@ export type Strings = {
     startButton: string;
   };
   intro: {
-    title: string;
-    story: (rivalName: string, rivalOwner: string, playerName: string) => string;
+    step1: string;
+    step2: (rivalName: string) => string;
+    step3: string;
+    nextButton: string;
     continueButton: string;
   };
-  agencyIntro: {
-    eyebrow: string;
-    debutLine: (playerName: string) => string;
-  };
-  rivalIntro: {
-    eyebrow: string;
-    role: (agencyName: string) => string;
-    reputation: (rivalOwner: string, rivalName: string) => string;
+  profiles: {
+    player: {
+      role: (agencyName: string) => string;
+      tagline: string;
+    };
+    rival: {
+      role: (agencyName: string) => string;
+      tagline: string;
+    };
+    matchupLabel: (playerOwner: string, rivalOwner: string) => string;
   };
   draft: {
     title: (agencyName: string) => string;
     chooseButton: string;
     progress: (current: number, total: number) => string;
     categories: Record<CharacterCategory, string>;
+    attributes: Record<AttributeKey, string>;
+    strengthsLabel: string;
+    weaknessLabel: string;
+    rosterLabel: (agencyName: string, count: number, total: number) => string;
   };
   rivalDraft: {
     title: string;
     subtitle: (rivalOwner: string) => string;
     pickCommentary: (characterName: string, variantIndex: number) => string;
     continueButton: string;
+    playerRosterTitle: string;
+    playerRosterSubtitle: (count: number) => string;
+    rivalRosterTitle: string;
+    rivalRosterSubtitle: string;
+    hiddenCount: (count: number) => string;
   };
   season: {
     title: string;
+    progress: (current: number, total: number) => string;
     nextEventButton: string;
     finalResultButton: string;
     vs: string;
+    outcomeLabel: Record<EventOutcome, string>;
     narrative: (
       key: EventNarrativeKey,
       eventType: EventType,

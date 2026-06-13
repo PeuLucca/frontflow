@@ -31,6 +31,7 @@ export type Character = {
   category: CharacterCategory;
   imageUrl: string;
   imageCredit?: string;
+  imageSourceUrl?: string;
   country?: string;
   tags: string[];
   attributes: CharacterAttributes;

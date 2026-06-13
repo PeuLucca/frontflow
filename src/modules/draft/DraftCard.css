@@ -33,3 +33,39 @@
   font-size: 0.7rem;
   color: var(--color-secondary);
 }
+
+.draft-card__insights {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.draft-card__insight {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  font-size: 0.8rem;
+}
+
+.draft-card__insight-label {
+  flex-shrink: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.65rem;
+  color: var(--color-muted);
+}
+
+.draft-card__insight-value {
+  text-align: right;
+  font-weight: 600;
+}
+
+.draft-card__insight--strong .draft-card__insight-value {
+  color: var(--color-primary);
+}
+
+.draft-card__insight--weak .draft-card__insight-value {
+  color: var(--color-rival);
+}

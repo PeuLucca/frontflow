@@ -10,8 +10,11 @@
   text-align: center;
 }
 
-.season__events {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
+.season__progress {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-secondary);
+  text-align: center;
+  margin-top: -8px;
 }

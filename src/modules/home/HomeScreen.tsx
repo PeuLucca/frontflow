@@ -10,7 +10,7 @@ type HomeScreenProps = {
 
 export function HomeScreen({ onStart }: HomeScreenProps) {
   return (
-    <Layout>
+    <Layout showHeader={false}>
       <div className="home">
         <p className="home__eyebrow">{strings.home.eyebrow}</p>
         <h1 className="home__logo">

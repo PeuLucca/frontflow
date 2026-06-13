@@ -15,17 +15,46 @@
   text-align: center;
 }
 
+.rival-draft__section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.rival-draft__section--rival {
+  border-color: var(--color-rival);
+}
+
+.rival-draft__section-title {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.rival-draft__section-title--player {
+  color: var(--color-primary);
+}
+
+.rival-draft__section-title--rival {
+  color: var(--color-rival);
+}
+
+.rival-draft__section-subtitle {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: -4px;
+}
+
 .rival-draft__picks {
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
 .rival-draft__pick {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  border-color: var(--color-rival);
 }
 
 .rival-draft__pick-text {
@@ -44,4 +73,12 @@
   color: var(--color-muted);
   font-size: 0.85rem;
   line-height: 1.4;
+}
+
+.rival-draft__hidden {
+  text-align: center;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-rival);
 }

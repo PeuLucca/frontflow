@@ -22,6 +22,33 @@
   text-align: center;
 }
 
+.event-card__badge {
+  align-self: center;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+}
+
+.event-card__badge--player {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.event-card__badge--rival {
+  border-color: var(--color-rival);
+  color: var(--color-rival);
+}
+
+.event-card__badge--draw {
+  border-color: var(--color-muted);
+  color: var(--color-muted);
+}
+
 .event-card__narrative {
   font-style: italic;
   color: var(--color-muted);
