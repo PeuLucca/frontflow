@@ -64,10 +64,11 @@ export function ResultScreen({ state, onRestart }: ResultScreenProps) {
   const handleShare = async () => {
     const shareText = strings.result.shareText(headline, scoreText, narrative, titlesLine);
     const url = window.location.href;
+    const fullMessage = `${shareText}\n\n${url}`;
 
     if (navigator.share) {
       try {
-        await navigator.share({ title: strings.result.shareTitle, text: shareText, url });
+        await navigator.share({ title: strings.result.shareTitle, text: fullMessage });
       } catch {
         // user cancelled the share sheet - no action needed
       }
@@ -75,7 +76,7 @@ export function ResultScreen({ state, onRestart }: ResultScreenProps) {
     }
 
     try {
-      await navigator.clipboard.writeText(`${shareText}\n${url}`);
+      await navigator.clipboard.writeText(fullMessage);
       setShowCopiedFeedback(true);
       window.setTimeout(() => setShowCopiedFeedback(false), SHARE_FEEDBACK_DURATION_MS);
     } catch {
@@ -125,7 +126,7 @@ export function ResultScreen({ state, onRestart }: ResultScreenProps) {
           {strings.result.restartButton}
         </Button>
 
-        <p className="result__credits">{strings.result.credits}</p>
+        <p className="result__credits">{strings.common.credits}</p>
       </div>
     </Layout>
   );

@@ -14,9 +14,20 @@ export type NarrativeParams = {
 };
 
 export type Strings = {
+  common: {
+    close: string;
+    credits: string;
+  };
   header: {
     wordmark: string;
     tagline: string;
+    rulesButton: string;
+  };
+  rules: {
+    title: string;
+    intro: string;
+    sections: { title: string; body: string }[];
+    closing: string;
   };
   home: {
     eyebrow: string;
@@ -48,9 +59,8 @@ export type Strings = {
     progress: (current: number, total: number) => string;
     categories: Record<CharacterCategory, string>;
     attributes: Record<AttributeKey, string>;
-    strengthsLabel: string;
-    weaknessLabel: string;
     rosterLabel: (count: number, total: number) => string;
+    toggleScores: (name: string, expanded: boolean) => string;
   };
   rivalDraft: {
     title: string;
@@ -107,7 +117,6 @@ export type Strings = {
       rivalTitles: number,
     ) => string;
     shareCopied: string;
-    credits: string;
   };
 };
 

@@ -35,3 +35,20 @@
   text-transform: uppercase;
   color: var(--color-secondary);
 }
+
+.header__rules-button {
+  margin-top: var(--space-xs);
+  padding: 6px var(--space-sm);
+  min-height: 32px;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--color-secondary);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.header__rules-button:active {
+  transform: scale(0.97);
+}

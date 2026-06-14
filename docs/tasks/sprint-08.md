@@ -1,4 +1,4 @@
-# Sprint 07 - Deployment & Final QA
+# Sprint 08 - Deployment & Final QA
 
 ## Goal
 

@@ -20,6 +20,7 @@ export function HomeScreen({ onStart }: HomeScreenProps) {
         <Button onClick={onStart} fullWidth>
           {strings.home.startButton}
         </Button>
+        <p className="home__credits">{strings.common.credits}</p>
       </div>
     </Layout>
   );

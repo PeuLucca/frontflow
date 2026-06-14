@@ -1,0 +1,30 @@
+.rules-modal__intro {
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.rules-modal__section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: var(--space-sm);
+  border-top: 1px solid rgba(244, 214, 160, 0.15);
+}
+
+.rules-modal__section-title {
+  font-size: 0.95rem;
+  color: var(--color-primary);
+}
+
+.rules-modal__section-body {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-muted);
+}
+
+.rules-modal__closing {
+  font-style: italic;
+  color: var(--color-secondary);
+  text-align: center;
+  padding-top: var(--space-sm);
+}

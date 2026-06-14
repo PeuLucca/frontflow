@@ -1,7 +1,11 @@
+import { useState } from "react";
 import { strings } from "../i18n/strings";
+import { RulesModal } from "./RulesModal";
 import "./Header.css";
 
 export function Header() {
+  const [rulesOpen, setRulesOpen] = useState(false);
+
   return (
     <header className="header">
       <div className="header__brand">
@@ -26,6 +30,15 @@ export function Header() {
         <span className="header__wordmark">{strings.header.wordmark}</span>
       </div>
       <p className="header__tagline">{strings.header.tagline}</p>
+      <button
+        type="button"
+        className="header__rules-button"
+        onClick={() => setRulesOpen(true)}
+      >
+        {strings.header.rulesButton}
+      </button>
+
+      <RulesModal open={rulesOpen} onClose={() => setRulesOpen(false)} />
     </header>
   );
 }

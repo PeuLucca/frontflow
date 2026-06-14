@@ -83,9 +83,38 @@ const RIVAL_PICK_COMMENTARY = [
 ];
 
 export const ptBR: Strings = {
+  common: {
+    close: "Fechar",
+    credits: "Powered by: Pedro L",
+  },
   header: {
     wordmark: "Front Row",
     tagline: "Monte · Desfile · Vença",
+    rulesButton: "Como Funciona?",
+  },
+  rules: {
+    title: "Como Funciona a Pontuação",
+    intro:
+      "Cada temporada tem 8 eventos de moda. Em cada um, a sua agência enfrenta a Velvet House - e quem pontuar mais, vence o evento.",
+    sections: [
+      {
+        title: "Qualidades em destaque",
+        body: "Cada evento valoriza duas qualidades em dobro. Uma it girl elegante e na tendência, por exemplo, brilha mais em Paris do que em um evento que valorize fama e contatos.",
+      },
+      {
+        title: "Especialidades",
+        body: "Quando a especialidade de uma personagem combina com o evento, ela ganha um bônus extra de pontuação para a sua agência.",
+      },
+      {
+        title: "As 3 melhores entram em cena",
+        body: "Em cada evento, só as 3 integrantes do seu elenco com as melhores notas para aquele evento representam a agência - monte um elenco versátil.",
+      },
+      {
+        title: "Um toque de sorte",
+        body: "Cada evento tem uma dose de imprevisibilidade - mesmo o elenco perfeito pode ser surpreendido numa noite.",
+      },
+    ],
+    closing: "Vença mais eventos que a Velvet House e a temporada é sua.",
   },
   home: {
     eyebrow: "Uma Rivalidade de Agências de Moda",
@@ -132,9 +161,9 @@ export const ptBR: Strings = {
       charisma: "Carisma",
       trend: "Tendência",
     },
-    strengthsLabel: "Fortes",
-    weaknessLabel: "Atenção",
     rosterLabel: (count, total) => `Elenco: ${count}/${total}`,
+    toggleScores: (name, expanded) =>
+      expanded ? `Ocultar pontuação de ${name}` : `Ver pontuação de ${name}`,
   },
   rivalDraft: {
     title: "Enquanto Isso, na Velvet House...",
@@ -216,6 +245,5 @@ export const ptBR: Strings = {
     titlesShareLine: (playerName, playerTitles, rivalName, rivalTitles) =>
       `👑 Hall da Fama: ${playerName} ${playerTitles} x ${rivalTitles} ${rivalName}`,
     shareCopied: "Resultado copiado para a área de transferência!",
-    credits: "Powered by: Pedro L",
   },
 };
