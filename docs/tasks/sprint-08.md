@@ -30,7 +30,7 @@ complete a final QA pass before release.
 - Verify all character images and fallbacks load correctly from the
   deployed URL.
 - Update `README.md` with setup instructions, available scripts, and a
-  link to the live game.
+  link to the live game
 
 ## Acceptance Criteria
 
