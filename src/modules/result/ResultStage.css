@@ -1,0 +1,56 @@
+.result-stage {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 220px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: radial-gradient(
+    circle at 50% 100%,
+    rgba(242, 196, 109, 0.18),
+    transparent 70%
+  );
+  animation: result-stage-reveal 0.5s ease-out;
+}
+
+@keyframes result-stage-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.result-stage__hero {
+  position: relative;
+  z-index: 2;
+  margin-right: 14%;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.55));
+}
+
+.result-stage__runner-up {
+  position: absolute;
+  right: var(--space-sm);
+  bottom: var(--space-sm);
+  z-index: 0;
+  opacity: 0.75;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.5)) grayscale(0.2);
+}
+
+.result-stage--draw {
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--space-lg);
+  height: auto;
+  background: none;
+}
+
+@media (min-width: 600px) {
+  .result-stage {
+    height: 260px;
+  }
+}

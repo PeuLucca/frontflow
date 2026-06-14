@@ -1235,7 +1235,7 @@ export const CHARACTERS: Character[] = [
     id: "bruna-biancardi",
     name: "Bruna Biancardi",
     category: "wag",
-    imageUrl: "",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKz-X6tP0sllmKZWI0soRJ-GfNoqaEkWcmZxvvs3un-0RYR1axPP27rve8-v3jJ91wmh-_AmMJ-KxMLdJA9uTw-dWQx8jY608m8Zmq_SEg&s=10",
     country: "Brazil",
     tags: ["estilo de vida", "bem-estar", "beleza", "maternidade"],
     attributes: {
@@ -1252,7 +1252,7 @@ export const CHARACTERS: Character[] = [
     id: "carol-cabrino",
     name: "Carol Cabrino",
     category: "wag",
-    imageUrl: "",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKo0GqGM6ElJmxtte9JUheoh_K-pTYLAQqaMlkZCPmX7NfP_rEY_7X20mZjui-ow1YjxVjafSUH2lmY99GFpRjeUL9HDYkKcdSnKo0vfDF3w&s=10",
     country: "Brazil",
     tags: ["família", "estilo de vida", "bastidores do futebol", "maternidade"],
     attributes: {
@@ -1288,7 +1288,7 @@ export const CHARACTERS: Character[] = [
     id: "helena-bordon",
     name: "Helena Bordon",
     category: "fashion_icon",
-    imageUrl: "",
+    imageUrl: "https://aloalobahia.com/images/p/helenasegundou_alo_alo_bahia.png",
     country: "Brazil",
     tags: ["luxo", "semana de moda", "it-girl", "empreendedora"],
     attributes: {

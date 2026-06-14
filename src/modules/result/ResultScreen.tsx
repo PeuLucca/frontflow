@@ -4,6 +4,7 @@ import { Layout } from "../../shared/components/Layout";
 import { Button } from "../../shared/components/Button";
 import { Card } from "../../shared/components/Card";
 import { AgencyRoster } from "../agency/AgencyRoster";
+import { ResultStage } from "./ResultStage";
 import { strings } from "../../shared/i18n/strings";
 import "./ResultScreen.css";
 
@@ -68,6 +69,7 @@ export function ResultScreen({ state, onRestart }: ResultScreenProps) {
   return (
     <Layout>
       <div className="result">
+        <ResultStage winner={finalResult.winner} />
         <Card highlight className="result__champion">
           <p className="result__eyebrow">{strings.result.eyebrow}</p>
           <h1 className="result__headline">{headline}</h1>

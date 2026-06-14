@@ -1,3 +1,16 @@
+.matchup-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.matchup-characters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-xs);
+}
+
 .matchup {
   display: flex;
   align-items: center;
