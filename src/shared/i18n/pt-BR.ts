@@ -1,5 +1,6 @@
 import type { EventNarrativeKey, EventType } from "../../modules/game/game.types";
 import type { NarrativeParams, Strings } from "./strings";
+import { pickRandom } from "../utils/random";
 
 type EventNarrativeTable = Record<
   EventType,
@@ -81,6 +82,87 @@ const RIVAL_PICK_COMMENTARY = [
   (characterName: string) =>
     `Enquanto você ainda comemorava sua escalação, ${characterName} já vestia Velvet House.`,
 ];
+
+const MIRANDA_DRAFT_TAUNTS = [
+  "Hm. Essa foi uma decisão.",
+  "Você realmente pensou nisso?",
+  "Corajosa. Não necessariamente no bom sentido.",
+  "Interessante. Eu não teria feito isso.",
+  "Tem certeza?",
+  "Vou fingir que entendi sua estratégia.",
+  "Isso certamente surpreendeu alguém.",
+  "Eu esperava algo... diferente.",
+  "Você gosta de correr riscos, vejo.",
+  "Essa escolha tem personalidade. Pelo menos isso.",
+  "Não era minha primeira opção. Nem a segunda.",
+  "Vamos torcer para que você saiba algo que eu não sei.",
+  "Audaciosa.",
+  "Bem... agora não dá mais para voltar atrás.",
+  "Se isso funcionar, eu ficarei impressionada."
+];
+
+const MIRANDA_STAR_PICK_TAUNTS = [
+  "Eu sabia que você escolheria ela.",
+  "Originalidade nunca foi um requisito, suponho.",
+  "Uma escolha óbvia. Mas eficaz.",
+  "Difícil ignorar uma estrela dessas.",
+  "Ela ganha temporadas. Às vezes.",
+  "Admito, essa foi uma boa escolha.",
+  "Ela costuma causar problemas para minhas agências.",
+  "Eu teria feito o mesmo. Infelizmente.",
+  "Agora a temporada ficou um pouco mais complicada.",
+  "Nem todo mundo teria percebido o valor dela."
+];
+
+const MIRANDA_STAR_APPEARS_TAUNTS = [
+  "Ah...",
+  "Agora estamos falando de gente séria.",
+  "Ela pode mudar uma temporada inteira.",
+  "Espero que você saiba o que está vendo.",
+  "Algumas oportunidades aparecem uma vez só.",
+  "Essa costuma atrair muita atenção.",
+  "Nem eu gosto de enfrentar ela.",
+  "Interessante... muito interessante.",
+  "A temporada acabou de ficar mais perigosa.",
+  "Poucas conseguem entrar nesse grupo."
+];
+
+const MIRANDA_EVENT_WIN_TAUNTS = [
+  "Como esperado.",
+  "A experiência ainda faz diferença.",
+  "Você foi bem. Para uma iniciante.",
+  "A Velvet House agradece pela participação.",
+  "Algumas coisas simplesmente seguem a ordem natural.",
+  "Não se preocupe. Nem todo mundo nasce para vencer.",
+  "Você teve suas chances.",
+  "A temporada continua exatamente onde deveria estar.",
+  "Elegância não se improvisa.",
+  "Eu quase fiquei preocupada.",
+  "Quase.",
+  "Há uma diferença entre aparecer e dominar.",
+  "A passarela foi generosa com você hoje. Não o suficiente.",
+  "Isso foi divertido. Para mim.",
+  "Ainda estamos jogando ligas diferentes.",
+  "Seu esforço é admirável.",
+  "Seu resultado, nem tanto.",
+  "Acho que aprendemos algo hoje.",
+  "Ou pelo menos eu aprendi.",
+  "Você ainda está tentando me alcançar.",
+  "Continue tentando.",
+  "A multidão adora uma azarã.",
+  "Mas o espetáculo sempre termina igual.",
+  "Eu já vi temporadas inteiras decididas por menos.",
+  "E nenhuma delas terminou bem para a outra agência.",
+  "Você tem potencial.",
+  "É uma pena que eu tenha mais.",
+  "Se servir de consolo, você perdeu para a melhor.",
+  "A confiança é importante.",
+  "Mas resultados são mais importantes.",
+  "Foi uma boa tentativa.",
+  "Vou arquivar junto das outras."
+];
+
+const MIRANDA_EVENT_LOSS_TAUNTS = ["...", "Sorte.", "Isso não muda nada."];
 
 export const ptBR: Strings = {
   common: {
@@ -164,6 +246,7 @@ export const ptBR: Strings = {
     rosterLabel: (count, total) => `Elenco: ${count}/${total}`,
     toggleScores: (name, expanded) =>
       expanded ? `Ocultar pontuação de ${name}` : `Ver pontuação de ${name}`,
+    starBadge: "Personagem estrela",
   },
   rivalDraft: {
     title: "Enquanto Isso, na Velvet House...",
@@ -194,6 +277,11 @@ export const ptBR: Strings = {
     },
     narrative: (key, eventType, params) =>
       EVENT_NARRATIVE[eventType][key](params),
+    duel: {
+      vs: "VS",
+      winnerLabel: (characterName) => `🏆 ${characterName} venceu o duelo.`,
+      drawLabel: "Empate no duelo.",
+    },
   },
   result: {
     eyebrow: "Resultado Final",
@@ -245,5 +333,12 @@ export const ptBR: Strings = {
     titlesShareLine: (playerName, playerTitles, rivalName, rivalTitles) =>
       `👑 Hall da Fama: ${playerName} ${playerTitles} x ${rivalTitles} ${rivalName}`,
     shareCopied: "Resultado copiado para a área de transferência!",
+  },
+  miranda: {
+    draftReaction: () => pickRandom(MIRANDA_DRAFT_TAUNTS),
+    starPickReaction: () => pickRandom(MIRANDA_STAR_PICK_TAUNTS),
+    starAppearsReaction: () => pickRandom(MIRANDA_STAR_APPEARS_TAUNTS),
+    eventWinReaction: () => pickRandom(MIRANDA_EVENT_WIN_TAUNTS),
+    eventLossReaction: () => pickRandom(MIRANDA_EVENT_LOSS_TAUNTS),
   },
 };

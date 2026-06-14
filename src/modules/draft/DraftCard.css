@@ -11,6 +11,11 @@
     border-color 0.2s ease;
 }
 
+.draft-card--star {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 18px rgba(242, 196, 109, 0.2);
+}
+
 .draft-card--selected {
   border-color: var(--color-primary);
   box-shadow: 0 0 24px rgba(242, 196, 109, 0.35);
@@ -20,6 +25,17 @@
 .draft-card--dimmed {
   opacity: 0.4;
   transform: scale(0.97);
+}
+
+.draft-card__avatar-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.draft-card__star-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
 }
 
 .draft-card__name {

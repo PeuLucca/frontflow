@@ -1,14 +1,54 @@
 .matchup-block {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xs);
+  gap: var(--space-sm);
 }
 
-.matchup-characters {
+.duel {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 var(--space-xs);
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.duel__side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+.duel__name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+  overflow-wrap: anywhere;
+}
+
+.duel__category {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.6rem;
+  color: var(--color-secondary);
+}
+
+.duel__vs {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+}
+
+.duel__result {
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary);
 }
 
 .matchup {

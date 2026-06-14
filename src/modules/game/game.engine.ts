@@ -16,7 +16,7 @@ import { CHARACTERS } from "../../shared/data/characters";
 import { EVENTS } from "../../shared/data/events";
 import { FRONT_ROW, VELVET_HOUSE } from "../../shared/data/agencies";
 import { pickRandomUnique, shuffle } from "../../shared/utils/random";
-import { getTeamEventScore } from "../../shared/utils/scoring";
+import { getTeamEventScore, getTopPerformer } from "../../shared/utils/scoring";
 import { pickRivalCharacter } from "../rival/rival.ai";
 
 export function createInitialState(): GameState {
@@ -147,6 +147,8 @@ function simulateSeason(
       rivalScore,
       winner,
       narrativeKey: getNarrativeKey(winner),
+      playerCharacter: getTopPerformer(playerRoster, event),
+      rivalCharacter: getTopPerformer(rivalRoster, event),
     };
   });
 }

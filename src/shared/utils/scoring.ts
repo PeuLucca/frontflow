@@ -77,6 +77,16 @@ export function getOverallEventScore(
   return total / events.length;
 }
 
+export function getTopPerformer(
+  roster: Character[],
+  event: SeasonEvent,
+): Character {
+  return [...roster].sort(
+    (a, b) =>
+      getCharacterEventScore(b, event) - getCharacterEventScore(a, event),
+  )[0];
+}
+
 export function getTeamEventScore(
   roster: Character[],
   event: SeasonEvent,

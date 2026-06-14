@@ -3,6 +3,7 @@ import type { Character } from "../game/game.types";
 import { Card } from "../../shared/components/Card";
 import { Avatar } from "../../shared/components/Avatar";
 import { Button } from "../../shared/components/Button";
+import { StarBadge } from "../../shared/components/StarBadge";
 import { ATTRIBUTE_KEYS, getLowestAttribute, getTopAttributes } from "../../shared/utils/attributes";
 import { strings } from "../../shared/i18n/strings";
 import "./DraftCard.css";
@@ -26,6 +27,7 @@ export function DraftCard({
 }: DraftCardProps) {
   const className = [
     "draft-card",
+    character.isStar ? "draft-card--star" : "",
     selected ? "draft-card--selected" : "",
     dimmed ? "draft-card--dimmed" : "",
   ]
@@ -39,7 +41,14 @@ export function DraftCard({
 
   return (
     <Card className={className}>
-      <Avatar imageUrl={character.imageUrl} name={character.name} size="lg" />
+      <div className="draft-card__avatar-wrap">
+        <Avatar imageUrl={character.imageUrl} name={character.name} size="lg" />
+        {character.isStar && (
+          <span className="draft-card__star-badge">
+            <StarBadge />
+          </span>
+        )}
+      </div>
       <h3 className="draft-card__name">{character.name}</h3>
       <p className="draft-card__category">{strings.draft.categories[character.category]}</p>
       <button

@@ -19,6 +19,7 @@ export const CHARACTERS: Character[] = [
       trend: 92,
     },
     specialties: ["met_gala", "social_media_moment"],
+    isStar: true,
   },
   {
     id: "antonela-roccuzzo",
@@ -37,6 +38,7 @@ export const CHARACTERS: Character[] = [
       trend: 75,
     },
     specialties: ["vogue_cover", "fashion_awards"],
+    isStar: true,
   },
   {
     id: "coleen-rooney",
@@ -110,6 +112,7 @@ export const CHARACTERS: Character[] = [
       trend: 94,
     },
     specialties: ["paris_fashion_week", "vogue_cover"],
+    isStar: true,
   },
   {
     id: "bella-hadid",
@@ -146,6 +149,7 @@ export const CHARACTERS: Character[] = [
       trend: 91,
     },
     specialties: ["met_gala", "vogue_cover"],
+    isStar: true,
   },
   {
     id: "cara-delevingne",
@@ -476,6 +480,7 @@ export const CHARACTERS: Character[] = [
       trend: 84,
     },
     specialties: ["paris_fashion_week", "fashion_awards"],
+    isStar: true,
   },
   {
     id: "rihanna",
@@ -494,6 +499,7 @@ export const CHARACTERS: Character[] = [
       trend: 95,
     },
     specialties: ["met_gala", "luxury_campaign"],
+    isStar: true,
   },
   {
     id: "tracee-ellis-ross",
@@ -1005,6 +1011,7 @@ export const CHARACTERS: Character[] = [
       trend: 93,
     },
     specialties: ["met_gala", "social_media_moment"],
+    isStar: true,
   },
   {
     id: "beyonce",

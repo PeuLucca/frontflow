@@ -11,6 +11,10 @@ export function pickRandomUnique<T>(items: T[], count: number): T[] {
   return shuffle(items).slice(0, Math.min(count, items.length));
 }
 
+export function pickRandom<T>(items: T[]): T {
+  return items[Math.floor(Math.random() * items.length)];
+}
+
 export function randomInRange(min: number, max: number): number {
   return min + Math.random() * (max - min);
 }

@@ -61,6 +61,7 @@ export type Strings = {
     attributes: Record<AttributeKey, string>;
     rosterLabel: (count: number, total: number) => string;
     toggleScores: (name: string, expanded: boolean) => string;
+    starBadge: string;
   };
   rivalDraft: {
     title: string;
@@ -85,6 +86,11 @@ export type Strings = {
       eventType: EventType,
       params: NarrativeParams,
     ) => string;
+    duel: {
+      vs: string;
+      winnerLabel: (characterName: string) => string;
+      drawLabel: string;
+    };
   };
   result: {
     eyebrow: string;
@@ -117,6 +123,13 @@ export type Strings = {
       rivalTitles: number,
     ) => string;
     shareCopied: string;
+  };
+  miranda: {
+    draftReaction: () => string;
+    starPickReaction: () => string;
+    starAppearsReaction: () => string;
+    eventWinReaction: () => string;
+    eventLossReaction: () => string;
   };
 };
 

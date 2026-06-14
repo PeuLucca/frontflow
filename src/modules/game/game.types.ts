@@ -36,6 +36,7 @@ export type Character = {
   tags: string[];
   attributes: CharacterAttributes;
   specialties: EventType[];
+  isStar?: boolean;
 };
 
 export type Agency = {
@@ -66,6 +67,8 @@ export type EventResult = {
   rivalScore: number;
   winner: EventOutcome;
   narrativeKey: EventNarrativeKey;
+  playerCharacter: Character;
+  rivalCharacter: Character;
 };
 
 export type FinalResult = {
