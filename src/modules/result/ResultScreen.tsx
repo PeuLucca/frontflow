@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { GameState } from "../game/game.types";
 import { Layout } from "../../shared/components/Layout";
 import { Button } from "../../shared/components/Button";
 import { Card } from "../../shared/components/Card";
 import { AgencyRoster } from "../agency/AgencyRoster";
 import { ResultStage } from "./ResultStage";
+import { TitlesBoard } from "./TitlesBoard";
+import { getTitles, recordSeasonResult } from "../../shared/utils/titles";
 import { strings } from "../../shared/i18n/strings";
 import "./ResultScreen.css";
 
@@ -18,6 +20,14 @@ type ResultScreenProps = {
 export function ResultScreen({ state, onRestart }: ResultScreenProps) {
   const { finalResult, playerAgency, rivalAgency } = state;
   const [showCopiedFeedback, setShowCopiedFeedback] = useState(false);
+  const [titles, setTitles] = useState(getTitles);
+  const hasRecordedRef = useRef(false);
+
+  useEffect(() => {
+    if (!finalResult || hasRecordedRef.current) return;
+    hasRecordedRef.current = true;
+    setTitles(recordSeasonResult(finalResult.winner));
+  }, [finalResult]);
 
   if (!finalResult) return null;
 
@@ -44,8 +54,15 @@ export function ResultScreen({ state, onRestart }: ResultScreenProps) {
     finalResult.draws,
   );
 
+  const titlesLine = strings.result.titlesShareLine(
+    playerAgency.name,
+    titles.player,
+    rivalAgency.name,
+    titles.rival,
+  );
+
   const handleShare = async () => {
-    const shareText = strings.result.shareText(headline, scoreText, narrative);
+    const shareText = strings.result.shareText(headline, scoreText, narrative, titlesLine);
     const url = window.location.href;
 
     if (navigator.share) {
@@ -89,6 +106,12 @@ export function ResultScreen({ state, onRestart }: ResultScreenProps) {
           accent="rival"
         />
 
+        <TitlesBoard
+          playerName={playerAgency.name}
+          rivalName={rivalAgency.name}
+          titles={titles}
+        />
+
         <div className="result__share">
           <Button onClick={handleShare} variant="secondary" fullWidth>
             {strings.result.shareButton}
@@ -101,6 +124,8 @@ export function ResultScreen({ state, onRestart }: ResultScreenProps) {
         <Button onClick={onRestart} fullWidth>
           {strings.result.restartButton}
         </Button>
+
+        <p className="result__credits">{strings.result.credits}</p>
       </div>
     </Layout>
   );

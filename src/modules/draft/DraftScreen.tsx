@@ -32,11 +32,7 @@ export function DraftScreen({ state, onPick }: DraftScreenProps) {
     <Layout>
       <div className="draft">
         <DraftProgress current={current} total={total} />
-        <DraftRoster
-          agencyName={state.playerAgency.name}
-          roster={state.playerRoster}
-          total={total}
-        />
+        <DraftRoster roster={state.playerRoster} total={total} />
         <h2 className="draft__title">{strings.draft.title(state.playerAgency.name)}</h2>
         <div className="draft__options">
           {state.currentOptions.map((character) => (

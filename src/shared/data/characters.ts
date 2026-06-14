@@ -42,7 +42,7 @@ export const CHARACTERS: Character[] = [
     id: "coleen-rooney",
     name: "Coleen Rooney",
     category: "wag",
-    imageUrl: "https://commons.wikimedia.org/wiki/Special:Redirect/file/Coleen_Rooney.jpg",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMLJW-Mjv8Smcyfo28pg7JOCbVORadrxT_FTpUK6QaWC0dGoYEF-I_VXXKEpNgtcIL7p2kLDi83rs6rAWkKTIcZKq3RRPc1HL7DDUByPjmGA&s=10",
     imageCredit: "Wikimedia Commons",
     country: "England",
     tags: ["tabloid", "wagatha"],
@@ -60,7 +60,7 @@ export const CHARACTERS: Character[] = [
     id: "sasha-attwood",
     name: "Sasha Attwood",
     category: "wag",
-    imageUrl: "/images/characters/sasha-attwood.jpg",
+    imageUrl: "https://www.thesun.co.uk/wp-content/uploads/2025/08/sasha-attwood-1015109185.jpg?strip=all&w=870",
     country: "England",
     tags: ["rising-wag", "fashion"],
     attributes: {
@@ -555,7 +555,7 @@ export const CHARACTERS: Character[] = [
     id: "alice-campello",
     name: "Alice Campello",
     category: "wag",
-    imageUrl: "/images/characters/alice-campello.jpg",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRG0TgHvXfoeUJxd0LkP6tzAXtZqQyf4LKLbz1qugFdYLMI1S9umcfxupNpqPtGlC-v8QlwckW-n4uIGpGpqGCI4F2c-vFTaRGBqfyADZF_zg&s=10",
     country: "Spain",
     tags: ["luxury", "newlywed"],
     attributes: {
@@ -608,7 +608,7 @@ export const CHARACTERS: Character[] = [
     id: "annie-kilner",
     name: "Annie Kilner",
     category: "wag",
-    imageUrl: "/images/characters/annie-kilner.jpg",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC3caAd68lqcKKXlKUw1s2O6hXpHCpUW15K1wlpQMgk9nqqoEvohMyxWU0ermilidRiYdasin0gZTxEIHOR8_DlgLpVAcylJsYGvUanTsJ&s=10",
     country: "England",
     tags: ["low-key-luxury", "family"],
     attributes: {
@@ -625,7 +625,7 @@ export const CHARACTERS: Character[] = [
     id: "fern-hawkins",
     name: "Fern Hawkins",
     category: "wag",
-    imageUrl: "/images/characters/fern-hawkins.jpg",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcQZyhQDMFejr2JKaPFhkkkxXgCOfq-oiRA74VoIxA1OS6p4QvwdUazI4b0U46Sx18yasiA4DTZEjGyNioyq19yEN0MjXjUmgBjZvcM2w4kbgkLznsEX-zCCrTTmBZuGV0_jYFeOlWPS6eA&s=19",
     country: "England",
     tags: ["rising-wag", "lifestyle"],
     attributes: {
@@ -920,7 +920,7 @@ export const CHARACTERS: Character[] = [
     id: "mia-regan",
     name: "Mia Regan",
     category: "rising_star",
-    imageUrl: "/images/characters/mia-regan.jpg",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8NTI24Az15gKtQBZ9WLK9n2fOgLWgLhuKGggqBZES6qbjwKyxxXJtbd8nKESaocvD1QVn0Mv8me8KzU6uoOMOw7qgA5cxJm0dN5m5TXibJQ&s=10",
     country: "England",
     tags: ["model", "next-gen"],
     attributes: {
@@ -937,7 +937,7 @@ export const CHARACTERS: Character[] = [
     id: "maya-henry",
     name: "Maya Henry",
     category: "rising_star",
-    imageUrl: "/images/characters/maya-henry.jpg",
+    imageUrl: "https://people.com/thmb/_0AI1iCGBkvDO-t2_Y9AMQnHpAk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(687x222:689x224)/Maya-Henry-Liam-Payne-051424-tout-e1bb552a8a5342189d3e8cc31bd843e7.jpg",
     country: "USA",
     tags: ["socialite", "model"],
     attributes: {

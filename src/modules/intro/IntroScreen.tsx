@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { GameState } from "../game/game.types";
 import { Layout } from "../../shared/components/Layout";
 import { Button } from "../../shared/components/Button";
+import { GameCharacter } from "../../shared/components/GameCharacter";
 import { ProfileCard } from "../../shared/components/ProfileCard";
 import { PLAYER_PROFILE, RIVAL_PROFILE } from "../../shared/data/profiles";
 import { strings } from "../../shared/i18n/strings";
@@ -45,6 +46,10 @@ export function IntroScreen({ state, onContinue }: IntroScreenProps) {
 
         {isLastStep && (
           <div className="intro__matchup">
+            <div className="intro__faceoff">
+              <GameCharacter variant="player" mood="happy" size="lg" />
+              <GameCharacter variant="rival" mood="happy" size="lg" />
+            </div>
             <p className="intro__matchup-label">
               {strings.profiles.matchupLabel(state.playerAgency.owner, state.rivalAgency.owner)}
             </p>

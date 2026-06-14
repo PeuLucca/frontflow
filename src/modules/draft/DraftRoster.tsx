@@ -4,16 +4,15 @@ import { strings } from "../../shared/i18n/strings";
 import "./DraftRoster.css";
 
 type DraftRosterProps = {
-  agencyName: string;
   roster: Character[];
   total: number;
 };
 
-export function DraftRoster({ agencyName, roster, total }: DraftRosterProps) {
+export function DraftRoster({ roster, total }: DraftRosterProps) {
   return (
     <div className="draft-roster">
       <p className="draft-roster__label">
-        {strings.draft.rosterLabel(agencyName, roster.length, total)}
+        {strings.draft.rosterLabel(roster.length, total)}
       </p>
       {roster.length > 0 && (
         <div className="draft-roster__chips">

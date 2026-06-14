@@ -18,3 +18,10 @@
   text-align: center;
   margin-top: -8px;
 }
+
+.season__faceoff {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--space-lg);
+}

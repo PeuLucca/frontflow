@@ -9,6 +9,7 @@ import type {
 } from "./game.types";
 import {
   DRAFT_OPTIONS_PER_ROUND,
+  PLAYER_SCORE_BONUS,
   TOTAL_DRAFT_ROUNDS,
 } from "./game.constants";
 import { CHARACTERS } from "../../shared/data/characters";
@@ -134,7 +135,9 @@ function simulateSeason(
   events: SeasonEvent[],
 ): EventResult[] {
   return events.map((event) => {
-    const playerScore = roundScore(getTeamEventScore(playerRoster, event));
+    const playerScore = roundScore(
+      getTeamEventScore(playerRoster, event) + PLAYER_SCORE_BONUS,
+    );
     const rivalScore = roundScore(getTeamEventScore(rivalRoster, event));
     const winner = compareScores(playerScore, rivalScore);
 

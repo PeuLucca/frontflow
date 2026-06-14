@@ -117,11 +117,11 @@ export const ptBR: Strings = {
     chooseButton: "Escolher",
     progress: (current, total) => `Rodada ${current} de ${total}`,
     categories: {
-      wag: "Patroa",
+      wag: "Mulher de jogador",
       model: "Modelo",
       influencer: "Influenciadora",
       actress: "Atriz",
-      rising_star: "Promessa",
+      rising_star: "Estrela em ascensão",
       fashion_icon: "Ícone da Moda",
     },
     attributes: {
@@ -134,8 +134,7 @@ export const ptBR: Strings = {
     },
     strengthsLabel: "Fortes",
     weaknessLabel: "Atenção",
-    rosterLabel: (agencyName, count, total) =>
-      `Elenco ${agencyName}: ${count}/${total}`,
+    rosterLabel: (count, total) => `Elenco: ${count}/${total}`,
   },
   rivalDraft: {
     title: "Enquanto Isso, na Velvet House...",
@@ -204,11 +203,19 @@ export const ptBR: Strings = {
       const label = draws === 1 ? "empate" : "empates";
       return `${playerWins} - ${rivalWins} (${draws} ${label})`;
     },
+    titles: {
+      eyebrow: "Hall da Fama",
+      caption: "Temporadas conquistadas por cada agência.",
+      count: (count) => (count === 1 ? "1 título" : `${count} títulos`),
+    },
     restartButton: "Jogar de Novo",
     shareButton: "Compartilhar Resultado",
     shareTitle: "Front Row",
-    shareText: (headline, score, narrative) =>
-      `✨ ${headline}\nPlacar: ${score}\n\n${narrative}\n\nJogue Front Row e supere a Velvet House!`,
+    shareText: (headline, score, narrative, titlesLine) =>
+      `✨ ${headline}\nPlacar: ${score}\n\n${narrative}\n\n${titlesLine}\n\nJogue Front Row e supere a Velvet House!`,
+    titlesShareLine: (playerName, playerTitles, rivalName, rivalTitles) =>
+      `👑 Hall da Fama: ${playerName} ${playerTitles} x ${rivalTitles} ${rivalName}`,
     shareCopied: "Resultado copiado para a área de transferência!",
+    credits: "Powered by: Pedro L",
   },
 };

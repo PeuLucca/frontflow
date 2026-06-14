@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { GameState } from "../game/game.types";
 import { Layout } from "../../shared/components/Layout";
 import { Button } from "../../shared/components/Button";
+import { GameCharacter } from "../../shared/components/GameCharacter";
 import { EventCard } from "./EventCard";
 import { SeasonTimeline } from "./SeasonTimeline";
 import { strings } from "../../shared/i18n/strings";
@@ -24,6 +25,10 @@ export function SeasonScreen({ state, onContinue }: SeasonScreenProps) {
     <Layout>
       <div className="season">
         <h1 className="season__title">{strings.season.title}</h1>
+        <div className="season__faceoff">
+          <GameCharacter variant="player" mood="angry" size="md" />
+          <GameCharacter variant="rival" mood="angry" size="md" />
+        </div>
         <p className="season__progress">{strings.season.progress(revealed, total)}</p>
         <SeasonTimeline
           events={state.events}

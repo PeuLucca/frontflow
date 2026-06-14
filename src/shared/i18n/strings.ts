@@ -50,7 +50,7 @@ export type Strings = {
     attributes: Record<AttributeKey, string>;
     strengthsLabel: string;
     weaknessLabel: string;
-    rosterLabel: (agencyName: string, count: number, total: number) => string;
+    rosterLabel: (count: number, total: number) => string;
   };
   rivalDraft: {
     title: string;
@@ -86,11 +86,28 @@ export type Strings = {
     subline: (winner: EventOutcome, rivalOwner: string) => string;
     narrative: (winner: EventOutcome, params: NarrativeParams) => string;
     score: (playerWins: number, rivalWins: number, draws: number) => string;
+    titles: {
+      eyebrow: string;
+      caption: string;
+      count: (count: number) => string;
+    };
     restartButton: string;
     shareButton: string;
     shareTitle: string;
-    shareText: (headline: string, score: string, narrative: string) => string;
+    shareText: (
+      headline: string,
+      score: string,
+      narrative: string,
+      titlesLine: string,
+    ) => string;
+    titlesShareLine: (
+      playerName: string,
+      playerTitles: number,
+      rivalName: string,
+      rivalTitles: number,
+    ) => string;
     shareCopied: string;
+    credits: string;
   };
 };
 

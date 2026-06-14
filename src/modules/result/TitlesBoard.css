@@ -1,0 +1,62 @@
+.titles-board {
+  text-align: center;
+  animation: champion-reveal 0.5s ease-out 0.1s both;
+}
+
+.titles-board__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.titles-board__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.titles-board__side {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.titles-board__side--rival {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.titles-board__name {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.titles-board__value {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.titles-board__side--rival .titles-board__value {
+  color: var(--color-rival);
+}
+
+.titles-board__crown {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.titles-board__caption {
+  margin-top: var(--space-sm);
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
