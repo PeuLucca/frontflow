@@ -340,5 +340,7 @@ export const ptBR: Strings = {
     starAppearsReaction: () => pickRandom(MIRANDA_STAR_APPEARS_TAUNTS),
     eventWinReaction: () => pickRandom(MIRANDA_EVENT_WIN_TAUNTS),
     eventLossReaction: () => pickRandom(MIRANDA_EVENT_LOSS_TAUNTS),
+    toggleBubble: (collapsed) =>
+      collapsed ? "Mostrar mensagem da Miranda" : "Ocultar mensagem da Miranda",
   },
 };

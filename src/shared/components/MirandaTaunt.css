@@ -15,17 +15,41 @@
 
 .miranda-taunt__avatar {
   flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  pointer-events: auto;
   filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.45));
+}
+
+.miranda-taunt__avatar:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.miranda-taunt__avatar--jump {
+  animation: miranda-avatar-jump 0.6s ease-in-out;
 }
 
 .miranda-taunt__bubble {
   position: relative;
   max-width: 75%;
-  background: var(--color-card);
+  background: rgba(31, 17, 24, 0.68);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   padding: var(--space-sm) var(--space-md);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.45);
+  transform-origin: bottom right;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.miranda-taunt__bubble--collapsed {
+  opacity: 0;
+  transform: scale(0.85);
 }
 
 .miranda-taunt__bubble::after {
@@ -35,7 +59,9 @@
   bottom: 14px;
   width: 12px;
   height: 12px;
-  background: var(--color-card);
+  background: rgba(31, 17, 24, 0.68);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-right: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   transform: rotate(45deg);
@@ -55,5 +81,21 @@
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes miranda-avatar-jump {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-14px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-6px);
   }
 }

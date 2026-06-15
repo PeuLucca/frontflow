@@ -130,6 +130,7 @@ export type Strings = {
     starAppearsReaction: () => string;
     eventWinReaction: () => string;
     eventLossReaction: () => string;
+    toggleBubble: (collapsed: boolean) => string;
   };
 };
 
